@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Suspects - Case #027</title>
+
+    <style>
+        body {
+            background-color: #111111;
+            color: #eeeeee;
+            font-family: Georgia, serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .header {
+            text-align: center;
+            border: 2px solid #8b0000;
+            padding: 25px;
+            background-color: #1b1b1b;
+        }
+
+        .header h1 {
+            color: #ff3333;
+            letter-spacing: 3px;
+        }
+
+        .back {
+            color: #ff5555;
+            text-decoration: none;
+        }
+
+        .back:hover {
+            color: white;
+        }
+
+        .suspect {
+            background-color: #1b1b1b;
+            border-left: 4px solid #8b0000;
+            margin-top: 25px;
+            padding: 25px;
+        }
+
+        .suspect h2 {
+            color: #ff4444;
+        }
+
+        p {
+            line-height: 1.7;
+        }
+
+        .label {
+            color: #ff7777;
+            font-weight: bold;
+        }
+
+        details {
+            background-color: #222222;
+            padding: 15px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        summary {
+            color: #ff5555;
+            font-weight: bold;
+        }
+
+        .decision {
+            background-color: #1b1b1b;
+            border: 1px dashed #777777;
+            margin-top: 30px;
+            padding: 25px;
+        }
+
+        input[type="radio"] {
+            margin: 10px;
+        }
+
+        textarea {
+            background-color: #222222;
+            color: white;
+            border: 1px solid #555555;
+            padding: 10px;
+            width: 90%;
+        }
+
+        button {
+            background-color: #8b0000;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            margin-top: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #c00000;
+        }
+
+        .home-button {
+            display: block;
+            background-color: #8b0000;
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            margin-top: 30px;
+            text-align: center;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .home-button:hover {
+            background-color: #c00000;
+        }
+
+        footer {
+            text-align: center;
+            color: #777777;
+            margin: 40px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <h1>?? SUSPECT FILES</h1>
+
+        <p>
+            <a href="index.html" class="back">
+                ? BACK TO CASE FILE
+            </a>
+        </p>
+
+    </div>
+
+
+    <div class="suspect">
+
+        <h2>Suspect #1 — Alex</h2>
+
+        <p>
+            <span class="label">Age:</span> 27
+        </p>
+
+        <p>
+            <span class="label">Occupation:</span> Businessman
+        </p>
+
+        <p>
+            <span class="label">Possible Motive:</span> Money
+        </p>
+
+        <p>
+            <span class="label">Alibi:</span>
+            Claims he was in the library.
+        </p>
+
+        <details>
+
+            <summary>?? INVESTIGATE ALEX</summary>
+
+            <p>
+                Alex knew about the diamond before the party.
+                He claims he never entered the main hall.
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="suspect">
+
+        <h2>Suspect #2 — Maya</h2>
+
+        <p>
+            <span class="label">Age:</span> 25
+        </p>
+
+        <p>
+            <span class="label">Occupation:</span> Photographer
+        </p>
+
+        <p>
+            <span class="label">Possible Motive:</span> Revenge
+        </p>
+
+        <p>
+            <span class="label">Alibi:</span>
+            Claims she was outside taking photographs.
+        </p>
+
+        <details>
+
+            <summary>?? INVESTIGATE MAYA</summary>
+
+            <p>
+                Maya was seen near the open window shortly
+                before the alarm went off.
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="suspect">
+
+        <h2>Suspect #3 — Ryan</h2>
+
+        <p>
+            <span class="label">Age:</span> 30
+        </p>
+
+        <p>
+            <span class="label">Occupation:</span> Security Officer
+        </p>
+
+        <p>
+            <span class="label">Possible Motive:</span> Unknown
+        </p>
+
+        <p>
+            <span class="label">Alibi:</span>
+            Claims he was checking the security cameras.
+        </p>
+
+        <details>
+
+            <summary>?? INVESTIGATE RYAN</summary>
+
+            <p>
+                Ryan was the first person to report the missing
+                diamond. However, the security cameras stopped
+                recording during the power outage.
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="decision">
+
+        <h2>??? MAKE YOUR DECISION</h2>
+
+        <p>Who do you think stole the diamond?</p>
+
+        <form onsubmit="solveCase(event)">
+
+            <input type="radio" name="suspect" value="Alex">
+            <label>Alex</label>
+
+            <br>
+
+            <input type="radio" name="suspect" value="Maya">
+            <label>Maya</label>
+
+            <br>
+
+            <input type="radio" name="suspect" value="Ryan">
+            <label>Ryan</label>
+
+            <br><br>
+
+            <label>Why do you suspect them?</label>
+
+            <br><br>
+
+            <textarea rows="6"
+                      placeholder="Write your theory here..."></textarea>
+
+            <br>
+
+            <button type="submit">
+                ?? SUBMIT INVESTIGATION
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <a href="index.html" class="home-button">
+        ? RETURN TO CASE FILE
+    </a>
+
+<a href="reveal.html"
+class="home-button">
+REVEAL THE TRUTH
+</a>
+
+    <footer>
+        CASE FILE #027 • CONFIDENTIAL
+    </footer>
+
+</div>
+<script>
+
+function solveCase(event) {
+
+    event.preventDefault();
+
+  let suspect = document.querySelector('input[name="suspect"]:checked');
+
+if (!suspect) {
+    alert("?? Please select a suspect first!");
+    return;
+}
+
+if (suspect.value === "Alex") {
+    alert("?? You chose Alex.\n\nInteresting... His motive is money, but his alibi needs to be investigated.");
+}
+else if (suspect.value === "Maya") {
+    alert("?? You chose Maya.\n\nInteresting... She was near the window shortly before the alarm.");
+}
+else if (suspect.value === "Ryan") {
+    alert("?? You chose Ryan.\n\nInteresting... He was checking the cameras when they stopped recording.");
+}
+
+}
+
+</script>
+</body>
+</html>
